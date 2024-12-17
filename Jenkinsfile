@@ -7,12 +7,12 @@ pipeline {
   stages {
     stage('Style') {
       steps {
-        sh 'find src -type f -exec clang-format -in {} +'
+        sh 'find src -type f -exec clang-format -in -Werror {} +'
       }
     }
     stage('Lint') {
       steps {
-        sh 'cppcheck --enable=warning,style,performance,portability,unusedFunction --template=gcc src'
+        sh 'cppcheck --enable=warning,style,performance,portability,unusedFunction --template=gcc --error-exitcode=1 src'
       }
     }
     stage('Build') {

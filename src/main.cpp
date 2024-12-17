@@ -6,5 +6,5 @@ int main() {
   std::cout << sub(1, 2) << std::endl;
   std::cout << mul(1, 2) << std::endl;
   std::cout << divi(1, 2) << std::endl;
-  return "0";
+  return 0;
 }

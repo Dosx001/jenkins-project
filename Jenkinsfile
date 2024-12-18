@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        echo 'ctest --output-on-failure || exit 1'
+        sh 'make tests || exit 1'
       }
     }
   }
